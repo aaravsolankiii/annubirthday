@@ -15,42 +15,35 @@ font-family:Arial;
 background:black;
 color:white;
 text-align:center;
-overflow:hidden;
+overflow-x:hidden;
 }
 
-#start{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-}
-
-button{
-padding:15px 30px;
-font-size:20px;
-border:none;
-border-radius:30px;
-background:#ff4d6d;
-color:white;
-cursor:pointer;
-}
-
-#main{
-display:none;
+.container{
+max-width:700px;
+margin:auto;
 padding:20px;
 }
 
-.slider{
-width:90%;
-max-width:350px;
-margin:auto;
-border-radius:20px;
-overflow:hidden;
+h1{
+font-size:34px;
 }
 
-.slider img{
+h2{
+font-weight:normal;
+margin-bottom:30px;
+}
+
+.photo{
 width:100%;
-display:none;
+height:auto;
+border-radius:20px;
+margin-bottom:25px;
+}
+
+.message{
+font-size:18px;
+line-height:1.7;
+margin-top:20px;
 }
 
 .heart{
@@ -65,12 +58,11 @@ animation:float 6s linear infinite;
 100%{transform:translateY(-1200px)}
 }
 
-.message{
-max-width:700px;
-margin:auto;
-line-height:1.7;
-font-size:18px;
-margin-top:20px;
+.final{
+margin-top:60px;
+font-size:26px;
+font-weight:bold;
+color:#ff4d6d;
 }
 
 </style>
@@ -79,33 +71,80 @@ margin-top:20px;
 
 <body>
 
-<div id="start">
-
-<h1>For Annu Priya ❤️</h1>
-
-<p>A small surprise from Aarav</p>
-
-<button onclick="start()">Tap To Unlock Memories</button>
-
-</div>
-
-<div id="main">
+<div class="container">
 
 <h1>Happy 20th Birthday ❤️</h1>
 
 <h2>Annu Priya</h2>
 
-<div class="slider">
+<img src="photo1.jpg" class="photo">
+<img src="photo2.jpg" class="photo">
+<img src="photo3.jpg" class="photo">
+<img src="photo4.jpg" class="photo">
+<img src="photo5.jpg" class="photo">
 
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
+<div class="message">
+
+<p>
+
+To the most beautiful soul in my life, Annu ❤️
+
+</p>
+
+<p>
+
+Give me your bad days, give me your good days.  
+Give me your smiles and give me your tears.
+
+</p>
+
+<p>
+
+Tell me your dreams, and tell me your fears.  
+I'm not here only for the sunshine days.
+
+</p>
+
+<p>
+
+I'm here for the storms too.  
+I'll hold your hand when life gets hard.
+
+</p>
+
+<p>
+
+I'll stand beside you when the world feels heavy.
+
+</p>
+
+<p>
+
+You are not just someone I love,  
+you are someone I choose every single day.
+
+</p>
+
+<p>
+
+Happy 20th Birthday my love ❤️
+
+</p>
+
+<p>
+
+— Aarav
+
+</p>
 
 </div>
 
-<div class="message" id="text"></div>
+<div class="final">
+
+I Love You Annu ❤️  
+Forever Yours — Aarav
+
+</div>
 
 </div>
 
@@ -114,84 +153,6 @@ margin-top:20px;
 </audio>
 
 <script>
-
-function start(){
-
-document.getElementById("start").style.display="none"
-
-document.getElementById("main").style.display="block"
-
-slideShow()
-
-typeWriter()
-
-}
-
-let slides=document.querySelectorAll(".slider img")
-
-let index=0
-
-function slideShow(){
-
-slides.forEach(img=>img.style.display="none")
-
-index++
-
-if(index>slides.length){index=1}
-
-slides[index-1].style.display="block"
-
-setTimeout(slideShow,2500)
-
-}
-
-let text=`To the most beautiful soul in my life,
-
-Annu ❤️
-
-Give me your bad days,
-give me your good days.
-
-Give me your smiles
-and give me your tears.
-
-Tell me your dreams,
-and tell me your fears.
-
-I'm not here only
-for the sunshine days.
-
-I'm here for the storms too.
-
-I'll hold your hand
-when life gets hard.
-
-I'll stand beside you
-when the world feels heavy.
-
-You are not just someone I love,
-you are someone I choose every single day.
-
-Happy 20th Birthday
-my love ❤️
-
-— Aarav`
-
-let i=0
-
-function typeWriter(){
-
-if(i<text.length){
-
-document.getElementById("text").innerHTML+=text.charAt(i)
-
-i++
-
-setTimeout(typeWriter,40)
-
-}
-
-}
 
 function createHeart(){
 
